@@ -1,0 +1,55 @@
+body , html{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    height: 70%;
+    background-color: #282828;
+}
+h1{
+    position: absolute;
+    padding: 3px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 0%;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'Kaisei Opti', serif;
+color:chartreuse;
+}
+span{
+    color:darkcyan;
+}
+ul{
+    width: auto;
+    float: right;
+   margin-top: 8px;
+}
+li{
+    display:inline-block;
+    padding: 15px 30px;
+}
+a{
+    text-align: center;
+    color:brown;
+    text-decoration: none;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'Kaisei Opti', serif;
+    font-size: 1.8vw; 
+}
+a:hover{
+    color:#000;
+    transition: 0.5s;
+}
+
+img{
+    width: 5%;
+    height: 5%;
+    padding-top: 40%;
+    padding-left: 2%;
+}
+
+#social{
+    color:blue;
+    padding-left: 0%;
+}
