@@ -1,9 +1,9 @@
 'use strict';
 var id = 999;
-
+const body = document.getElementsByTagName('body');
 
 const allEmployee = [];
-function Employee(employeeID,fullName,department,level,imageURL){
+function Employee(employeeID,fullName,department,level,imageURL,netSalary){
     this.employeeID = employeeID;
     this.fullName=fullName;
     this.department=department;
@@ -15,11 +15,37 @@ function Employee(employeeID,fullName,department,level,imageURL){
 }
 
 Employee.prototype.render = function (){
-    document.write(`<h2> Employee_ID : ${this.employeeID}</h2>`)
-    document.write(`<h2>Employee name:${this.fullName} </h2>`)   
-    document.write(`<h2>Department:${this.department} </h2>`)
-    document.write(`<h2>Employee salary:${this.netSalary} JD </h2>`)
-    document.write(`<br>`)
+ 
+    const divEl = document.createElement('div');
+    body[0].appendChild(divEl);
+    divEl.classList.add('container');
+
+    const box = document.createElement('div')
+    box.classList.add('Box');
+    divEl.appendChild(box);
+
+
+
+    const imgEl = document.createElement('img');
+    imgEl.classList.add('persImg')
+    imgEl.src = this.imageURL;
+    imgEl.alt = this.fullName;
+    box.appendChild(imgEl);
+
+    const pEl = document.createElement('p');
+    pEl.textContent = `Name : ${this.fullName} - ID: ${this.employeeID}`;
+    box.appendChild(pEl);
+
+    const pE2 = document.createElement('p')
+    pE2.textContent= `Department : ${this.department} - Level : ${this.level}`
+    box.append(pE2);
+
+    const pE3 = document.createElement('p')
+    pE3.textContent=`${this.netSalary}`
+    box.append(pE3);
+    
+    
+    
 }
 Employee.prototype.realSalary = function(){
    
@@ -48,25 +74,25 @@ Employee.prototype.realSalary = function(){
             } console.log(new_sal)
              return new_sal  }
 
-let ghazi =new Employee(unique_id(),"Ghazi Samer","Administration","Senior","/.pic/1.jpg");
-let lana =new Employee(unique_id(),"Lana Ali","Finance","Senior","/.pic/3.jpg");
-let tamara =new Employee(unique_id(),"Tamara Ayoub","Administration","Senior","/.pic/5.jpg");
-let safi =new Employee(unique_id(),"Safi Walid","Administration","Mid-Senior","/.pic/2.jpg");
- let omar =new Employee(unique_id(),"Omar Zaid","Development","Senior","/.pic/4.jpg");
- let rana =new Employee(unique_id(),"Rana Saleh","Development","Junior","/.pic/6.jpg");
- let hadi =new Employee(unique_id(),"Hadi Ahmad","Finance","Mid-Senior","/.pic/5.jpg");
+let ghazi =new Employee(unique_id(),"Ghazi Samer","Administration","Senior","./Assets/Ghazi.jpg");
+let lana =new Employee(unique_id(),"Lana Ali","Finance","Senior","./Assets/Lana.jpg");
+let tamara =new Employee(unique_id(),"Tamara Ayoub","Administration","Senior","./Assets/Tamara.jpg");
+let safi =new Employee(unique_id(),"Safi Walid","Administration","Mid-Senior","./Assets/Safi.jpg");
+let omar =new Employee(unique_id(),"Omar Zaid","Development","Senior","./Assets/Omar.jpg");
+let rana =new Employee(unique_id(),"Rana Saleh","Development","Junior","./Assets/Rana.jpg");
+let hadi =new Employee(unique_id(),"Hadi Ahmad","Finance","Mid-Senior","./Assets/Hadi.jpg");
 
-for(var i=0;i<allEmployee.length;i++){
-document.write(allEmployee[i].render());
-}
+// for(var i=0;i<allEmployee.length;i++){
+// document.write(allEmployee[i].render());
+// }
 
-// ghazi.render();
-// lana.render();
-// tamara.render();
-// safi.render();
-// omar.render();
-// rana.render();
-// hadi.render();
+ ghazi.render();
+lana.render();
+tamara.render();
+safi.render();
+omar.render();
+rana.render();
+hadi.render();
 
 
 
